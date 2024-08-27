@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TODO List</h1>
+    <input id="val" >
+    <button id="add" onclick="add()">ADD</button>
+    <br>
+    <ul id="list-container" style="list-style-type:disc;">
+        <li>Write H/W  
+            <button onclick="deleted(event)">Delete</button> 
+        </li>
+    </ul>
+
+    <script>
+        var ul = document.getElementById("list-container"); 
+        var iput = document.getElementById("val")
+        function add(){
+            var listitem = document.createElement("li");
+            listitem.innerHTML = iput.value + "<button onclick=\"deleted(event)\">Delete</button>"
+            ul.append(listitem)
+            console.log(listitem.textContent)
+        }
+        function deleted(event){
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
+</html>
